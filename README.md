@@ -4,7 +4,9 @@
 This is a collaborative online coding platform. The idea is initiated from some code challenge sites like LeetCode, which provides a user a coding text area but no availability for multiple users' collaboration. In this application, collaboration is enabled via **socket.io** to allow multiple users to synchronize their work over the same problem and **Redis** to cache their partial works. In a high-level view, this project uses **Angular2** for the front end, **Node.js** for the web server and a **Python** written backend server to connect **Docker** container to execute the code any user submits.
 
 ### Use Cases
-
+1. System lists all the problems
+2. User views a problem's details
+3. User adds a new problem
 
 ### Design Diagram
 
