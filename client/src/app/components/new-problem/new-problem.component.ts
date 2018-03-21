@@ -30,7 +30,14 @@ export class NewProblemComponent implements OnInit {
   addProblem() {
     this.dataService.addProblem(this.newProblem);
 
-    this.newProblem = Object.assign({}, DEFAULT_PROBLEM);
+    // this.newProblem = Object.assign({}, DEFAULT_PROBLEM);
+    /* must make a new copy of newProblem, otherwise two-way binding 
+       mechanism will change the previous added problem's name, desc, difficulty. 
+       I can comment this line cuz 
+       I separate the addProblem to a nav in top-nav bar
+       and reroute to problems page after user added a problem */
+
+    this.router.navigate(['/problems']);
   }
 
 }

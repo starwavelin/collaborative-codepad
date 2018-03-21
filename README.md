@@ -7,6 +7,7 @@ This is a collaborative online coding platform. The idea is initiated from some 
 1. System lists all the problems
 2. User views a problem's details
 3. User adds a new problem
+4. User toggles between navigations on top nav bar to route to pages
 
 ### Design Diagram
 
