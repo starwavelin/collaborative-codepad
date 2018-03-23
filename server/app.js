@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const logger = require('./log');
+const restRouter = require('./routes/restRouter');
 
-app.get('/', (req, res) => {res.send('Hello Express!')});
-app.listen(3000, () => logger.debug('Example app'));
+app.use('/api/v1', restRouter);
+
+app.listen(3000, () => logger.debug('Codepad started'));
