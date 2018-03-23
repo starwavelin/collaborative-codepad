@@ -5,6 +5,7 @@ const problemService = require('../services/problemService');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
+/* Error Messages */
 const duplicateProblemError = 'Problem name exists already!';
 
 // Get all problems
@@ -20,7 +21,6 @@ router.get('/problems/:id', function(req, res) {
 
 // Post a problem
 router.post('/problems', jsonParser, function(req, res) {
-
     problemService.addProblem(req.body)
         .then(problem => res.json(problem),
             error => res.status(400).send(duplicateProblemError));
