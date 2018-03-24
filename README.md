@@ -14,10 +14,10 @@ This is a collaborative online coding platform. The idea is initiated from some 
 
 ### Learning Outcomes
 
-1. [] Understood and mastered the core of **JavaScript**, such as callback functions and Promise.
-2. [] Learned the currently popular frontend framework **Angular2**; used **Angular CLI** to build a Single Page Application.
-3. [] Understood how **Node.js** works.
-4. [] Mastered the **RESTful API** design, which is an important data transmission method between Client and Server
+1. [x] Understood and mastered the core of **JavaScript**, such as callback functions and Promise.
+2. [x] Learned the currently popular frontend framework **Angular2**; used **Angular CLI** to build a Single Page Application.
+3. [x] Understood how **Node.js** works.
+4. [x] Mastered the **RESTful API** design, which is an important data transmission method between Client and Server
 5. [] Learned the **NoSQL** theory and used **MongoDB** for data storage; utilized key-value data store **Redis** for caching
 6. [] Did research on **WebSocket**
 7. [] Learned the basic usage of **Docker** and was able to use Docker to execute the code user submitted
