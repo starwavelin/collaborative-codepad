@@ -12,7 +12,7 @@ mongoose.connect(dbConnString);
 
 
 app.use('/api/v1', restRouter);
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.listen(3000, () => logger.debug('Codepad started: '));
 
@@ -21,5 +21,5 @@ app.listen(3000, () => logger.debug('Codepad started: '));
     user will have "Cannot GET /" issue
 */
 app.use((req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, '../client/dist') });
+    res.sendFile('index.html', { root: path.join(__dirname, '../public') });
 });
