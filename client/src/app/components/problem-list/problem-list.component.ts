@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Problem } from '../../models/problem.model';
 import { DataService } from '../../services/data.service';
@@ -11,6 +12,7 @@ import { DataService } from '../../services/data.service';
 export class ProblemListComponent implements OnInit {
 
   problems: Problem[];
+  subscriptionProblems: Subscription;
 
   // DI: inject dataService into constructor
   // private means this service only available for this component
@@ -23,8 +25,12 @@ export class ProblemListComponent implements OnInit {
     this.getProblems();
   }
 
+  ngOnDestroy() {
+    this.subscriptionProblems.unsubscribe();
+  }
+
   getProblems() {
-    this.problems = this.dataService.getProblems();
+    this.subscriptionProblems = this.dataService.getProblems().subscribe(problems => this.problems = problems);
   }
 
 }

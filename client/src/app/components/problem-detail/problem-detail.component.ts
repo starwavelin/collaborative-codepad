@@ -21,11 +21,14 @@ export class ProblemDetailComponent implements OnInit {
 
   ngOnInit() {
     /* subscribe: listen to the params change. 
-      When params change, the model "this.problem" will be updated.
+      When params change, the model "this.problem" will be updated, based
+      on the resolve of the promise this.dataService.getProblem(+params.id).
     */
-    this.route.params.subscribe(params => {
-      this.problem = this.dataService.getProblem(+params.id); //same as +params['id']
-    });
+    this.route.params.subscribe(params => 
+      this.dataService.getProblem(+params.id).then(prob => this.problem = prob) 
+        // +params.id is the same as +params['id']
+        // this line returns a ZoneAwarePromise whose status and value will be evaluated right after promise resolves
+    );
   }
 
 }
