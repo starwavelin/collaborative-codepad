@@ -10,6 +10,7 @@ import { ProblemListComponent } from './components/problem-list/problem-list.com
 import { ProblemDetailComponent } from './components/problem-detail/problem-detail.component';
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ProblemListComponent,
     ProblemDetailComponent,
     NewProblemComponent,
-    NavBarComponent
+    NavBarComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
