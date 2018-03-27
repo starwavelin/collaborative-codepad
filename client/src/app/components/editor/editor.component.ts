@@ -56,7 +56,17 @@ export class EditorComponent implements OnInit {
      this.editor.lastAppliedChange = null;
 
      // register change callback (listen on change event)
+     this.editor.on('change', (e) => {
+       console.log(`DEBUG: editor changes: ${JSON.stringify(e)}`); //DEBUG
 
+       /** 
+        * check if the change is the same as the last change,
+        * if Yes, skip it, we don't need to send the same thing to socket on web server
+        */
+       if (this.editor.lastAppliedChange != e) {
+         this.collaborationServ.change(JSON.stringify(e));
+       }
+     })
 
   }  
 
