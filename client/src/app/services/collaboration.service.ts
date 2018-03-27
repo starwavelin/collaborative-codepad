@@ -27,7 +27,7 @@ export class CollaborationService {
       editor.lastAppliedChange = delta;
 
       // apply these changes on editor
-      editor.getSessions().getDocument().applyDeltas([delta]);
+      editor.getSession().getDocument().applyDeltas([delta]);
     });
 
     /** 

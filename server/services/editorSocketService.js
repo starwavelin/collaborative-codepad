@@ -22,7 +22,7 @@ module.exports = function (io) {
             };
         }
 
-        collaborations[sessionId]['participants'].push(socket.io);
+        collaborations[sessionId]['participants'].push(socket.id);
 
         /**
          * socket event listener for 'change' event.
