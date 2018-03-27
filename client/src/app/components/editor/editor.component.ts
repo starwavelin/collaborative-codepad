@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { CollaborationService } from '../../services/collaboration.service';
 
 declare var ace: any;
 
@@ -12,6 +15,7 @@ export class EditorComponent implements OnInit {
   languages: string[] = ['Java', 'Python'];
   language: string = 'Java';
   editor: any;
+  sessionId: string;
 
   defaultContent = {
     'Java':
@@ -27,12 +31,38 @@ export class EditorComponent implements OnInit {
 `,
   };
 
-  constructor() { }
+  constructor(private collaborationServ: CollaborationService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // In our impl, use problem id as session id
+    this.route.params.subscribe(params => {
+      this.sessionId = params['id'];
+      this.initEditor();
+    });
+  }
+
+  /**
+   * Initialize editor panel and collaboration ability
+   */
+  initEditor(): void {
+    // config editor panel
     this.editor = ace.edit('editor');
     this.editor.setTheme('ace/theme/eclipse');
     this.resetEditor();
+
+     // Init collaborationService
+     this.collaborationServ.init(this.editor, this.sessionId);
+     this.editor.lastAppliedChange = null;
+
+     // register change callback (listen on change event)
+
+
+  }  
+
+  resetEditor(): void {
+    this.editor.session.setMode(`ace/mode/${this.language.toLowerCase()}`);
+    this.editor.setValue(this.defaultContent[this.language]);
   }
 
   /**
@@ -43,11 +73,6 @@ export class EditorComponent implements OnInit {
     this.language = lang;
     this.resetEditor();
   } 
-
-  resetEditor(): void {
-    this.editor.session.setMode(`ace/mode/${this.language.toLowerCase()}`);
-    this.editor.setValue(this.defaultContent[this.language]);
-  }
 
   submit(): void {
     let userCode = this.editor.getValue();

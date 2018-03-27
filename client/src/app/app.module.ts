@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { routing } from './app.routes';
 import { DataService } from './services/data.service';
+import { CollaborationService } from './services/collaboration.service';
+
 import { AppComponent } from './app.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { ProblemDetailComponent } from './components/problem-detail/problem-detail.component';
@@ -27,7 +29,10 @@ import { EditorComponent } from './components/editor/editor.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    CollaborationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
