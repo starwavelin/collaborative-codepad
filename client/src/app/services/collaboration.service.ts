@@ -44,4 +44,12 @@ export class CollaborationService {
   change(delta: string): void {
     this.collaborationSocket.emit('change', delta);
   }
+
+  /**
+   * call restoreBuffer() when refreshing the page or back to the session
+   * so history change can be brought back to update editor
+   */
+  restoreBuffer(): void {
+    this.collaborationSocket.emit('restoreBuffer');
+  }
 }
