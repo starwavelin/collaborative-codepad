@@ -1,4 +1,4 @@
-const logger = require('../log');
+const logger = require('../modules/log');
 
 const ProblemModel = require('../models/problemModel');
 

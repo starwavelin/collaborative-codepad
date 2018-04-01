@@ -1,5 +1,5 @@
 var winston = require('winston');
-var logDir = './logs'; 
+var logDir = '../logs'; 
 
 var logger = new (winston.Logger)({
     level: 'debug',

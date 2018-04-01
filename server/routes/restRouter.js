@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const logger = require('../log');
+const logger = require('../modules/log');
 const problemService = require('../services/problemService');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
