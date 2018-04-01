@@ -12,7 +12,8 @@ This is a collaborative online coding platform. The idea is initiated from some 
 ### Design Diagram
 ##### Architectural Overview
 ![alt text](./diagrams/architecturalOverview.png "Architectural Overview")
-
+##### System Design Diagram
+![alt text](./diagrams/systemDesignDiagram.png "System Design Diagram")
 
 ### Learning Outcomes
 
