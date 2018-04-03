@@ -44,10 +44,9 @@ module.exports = function (io) {
                         'participants': []
                     }
                 }
+                // add current partiticpant into participants
+                collaborations[sessionId]['participants'].push(socket.id);
             });
-
-            // add current partiticpant into participants
-            collaborations[sessionId]['participants'].push(socket.id);
         } else {
             // if sessionId is in collaborations, just add current partiticpant into participants
             collaborations[sessionId]['participants'].push(socket.id);

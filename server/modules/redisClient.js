@@ -22,8 +22,8 @@ function set(key, value, callback) {
     });
 }
 
-function get(key, value, callback) {
-    client.get(key, value, function(err, res) {
+function get(key, callback) {
+    client.get(key, function(err, res) {
         if (err) {
             logger.error(err);
             return;
