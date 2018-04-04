@@ -8,6 +8,9 @@ This is a collaborative online coding platform. The idea is initiated from some 
 2. User views a problem's details
 3. User adds a new problem
 4. User toggles between navigations on top nav bar to route to pages
+5. System provides an editing panel on each problem detail page
+6. Multiple users simultaneously edits a problem
+7. User submits a solution to a problem and System outputs the result
 
 ### Design Diagram
 ##### Architectural Overview
