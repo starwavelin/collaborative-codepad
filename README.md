@@ -22,7 +22,7 @@ This is a collaborative online coding platform. The idea is initiated from some 
 3. [x] Understood how **Node.js** works.
 4. [x] Mastered the **RESTful API** design, which is an important data transmission method between Client and Server
 5. [x] Learned the **NoSQL** theory and used **MongoDB** for data storage
-6. [] Utilized key-value data store **Redis** for caching
+6. [x] Utilized key-value data store **Redis** for caching
 7. [x] Did research on **WebSocket**
 8. [] Learned the basic usage of **Docker** and was able to use Docker to execute the code user submitted
 9. [] Learned **Python3** and used it to develop the backend server
