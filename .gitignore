@@ -1,1 +1,4 @@
 /public
+
+# Redis backup file
+*.rdb

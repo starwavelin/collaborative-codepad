@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const http = require('http');
 
-const logger = require('./log');
+const logger = require('./modules/log');
 const restRouter = require('./routes/restRouter');
 const socketIO = require('socket.io');
 const io = socketIO();
